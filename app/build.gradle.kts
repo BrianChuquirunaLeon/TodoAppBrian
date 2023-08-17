@@ -1,8 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id ("kotlin-kapt")
-    id ("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
+
 }
 
 android {
@@ -70,12 +72,17 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //LiveData
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.compose.runtime:runtime-livedata:1.5.0")
 
     //Hilt
-    var hilt_version = 2.45
+    var hilt_version = 2.46
     implementation ("com.google.dagger:hilt-android:$hilt_version")
     kapt ("com.google.dagger:hilt-android-compiler:$hilt_version")
 
+    //Room
+    var room_version = "2.5.2"
+    implementation("androidx.room:room-runtime:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
+    implementation ("androidx.room:room-ktx:$room_version")
 }

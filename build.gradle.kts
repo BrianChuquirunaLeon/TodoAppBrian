@@ -5,11 +5,12 @@ buildscript {
 //    Follow this page wich store all versions of DaggerHilt: https://github.com/google/dagger/releases
 
     dependencies {
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.45")
+        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.46")
     }
 }
 
 plugins {
     id("com.android.application") version "8.1.0" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+    id("com.google.devtools.ksp") version "1.9.0-1.0.11" apply false
 }
